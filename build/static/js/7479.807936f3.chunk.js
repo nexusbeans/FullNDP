@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[7479],{7479:function(s,e,a){s.exports=a.p+"static/media/coming-bg.12ea87684e78a55e7bd7.jpg"}}]);
