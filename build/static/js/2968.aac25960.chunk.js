@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[2968],{2968:function(s,e,h){s.exports=h.p+"static/media/UNIVERSAL-TRUTH-BACKGROUND.6f4b63527c0b0e2642d9.jpg"}}]);
