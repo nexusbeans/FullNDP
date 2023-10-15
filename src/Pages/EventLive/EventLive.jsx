@@ -12,7 +12,7 @@ import FormSubmit from '../FormSubmit/FormSubmit';
 import SliderBlock from '../../Components/SliderBlock';
 import Banner5 from "../../assets/images/NDP_Banner1.jpg";
 import Banner6 from "../../assets/images/p1.jpg";
-import Banner7 from "../../assets/images/p2.jpg";
+import Banner7 from "../../assets/images/p3.jpg";
 // import selectOptions from "../../Api/LiveEventOption";
 import axios from 'axios';
 
@@ -55,15 +55,19 @@ function EventLive() {
               MainTitle={"Live Event"}
               subTitle={"Live Event"}
             />
-            <Row className='event_listRow'>
-              <Col md={6}>
-                <div className='live_eventPage'>
                   {/* <SliderBlock /> */}
-                  <img src={Banner6} alt="" srcset="" className='w-100' />
+            <Row className='event_listRow'>
+              {/* <Col md={6}>
+                <div className='live_eventPage'>
+                  <a href="https://42801678.hs-sites.com/satsang-oct-15-2023" target='_blank' rel="noreferrer">
+                       <img src={Banner6} alt="" srcset="" className='w-100' />
+                  </a>
                 </div>
-              </Col>
-              <Col md={6} className="rightform">
+              </Col> */}
+              <Col md={12} className="rightform">
+              <a href="http://42801678.hs-sites.com/meet-greet_chicago_oct-28-2023" target='_blank' rel="noreferrer" className='w-100'>
               <img src={Banner7} alt="" srcset=""  className='w-100'/>
+              </a>
                 {/* <form onSubmit={handleSubmit} method="post" className="rightform_elements">
                 <input type="hidden" value="Live Event Form" name="Form_Name" id="SESSION_PAGE_FORM" />
                   <div id="blocks" className="form-group">

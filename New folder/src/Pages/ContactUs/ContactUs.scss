@@ -1,0 +1,99 @@
+.addre {
+    a {
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+
+        &:hover{
+            color: #f6921e;
+        }
+    }
+}
+.contact_control {
+    i {
+        padding: 0;
+        margin: 0;
+        font-size: 40px !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.contmap {
+    .row {
+        align-items: center;
+    }
+}
+.map {
+    iframe {
+        width: 100%;
+    }
+}
+.contmap_items {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-right: 2px solid #77c1c4;
+    padding-right: 20px;
+}
+.section_contact{
+    margin: 30px 0 30px;
+    padding: 0 20px;
+}
+.contact__banner {
+    background: url(../../assets/images/mig.jpg) no-repeat;
+    background-attachment: fixed !important;
+    min-height: 300px;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    &::after {
+        background-color: #0000003b;
+        content: "";
+        width: 100%;
+        height: 100%;
+        top: 0;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+    }
+
+    .banner_contactLayout {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 2;
+        position: relative;
+        h2 {
+            font-size: 50px;
+            font-weight: 600;
+            color: #fff;
+
+            margin: 0;
+            padding-right: 20px;
+        }
+    }
+}
+.layer_fabContact{
+    gap: 20px;
+}
+@media screen and (max-width: 767px) {
+    .support {
+        padding-top: 0;
+    }
+    .contact__banner {
+        min-height: 170px;
+
+        .banner_contactLayout h2 {
+            font-size: 30px;
+            padding-right: 0;
+        }
+    }
+    .contmap_items {
+        border-right: none;
+        border-bottom: #77c1c4 2px solid;
+        padding-right: 0px;
+        padding-bottom: 20px;
+    }
+}

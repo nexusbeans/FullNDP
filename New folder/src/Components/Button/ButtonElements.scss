@@ -1,0 +1,69 @@
+.buyButton {
+  border-radius: 30px;
+  border: 3px solid #77c1c4;
+  color: #000;
+  font-weight: 700;
+  padding: 0px 0 0px 25px;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  justify-content: space-between;
+  text-transform: uppercase;
+  line-height: 1px;
+  height: 43px;
+  z-index: 1;
+
+  span {
+    background-color: #77c1c4;
+    display: block;
+    border-radius: 50%;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 1px;
+    transition: all 0.3s;
+    margin-left: 10px;
+
+    img {
+      height: 32px;
+      padding: 7px;
+      position: relative;
+      left: 1px;
+    }
+  }
+  &:hover {
+    border-color: #f6921e;
+    transition: all 0.3s;
+    color: rgba(51, 51, 51, 0.77);
+    span {
+      background-color: #f6921e;
+    }
+    img {
+      filter: grayscale(1);
+    }
+  }
+}
+.hideElements {
+  display: none;
+}
+.showElement_value {
+  display: block;
+}
+.popup-content_data {
+  .hd {
+    font-size: 50px;
+  }
+  .hd1 {
+    font-size: 26px;
+  }
+  .dropmsg1 {
+    margin-top: -50px;
+  }
+  .form-group{
+    margin-bottom: 10px;
+  }
+}

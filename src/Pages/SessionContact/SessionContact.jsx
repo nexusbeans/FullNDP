@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import "./SessionContact.scss";
@@ -11,6 +11,19 @@ import { FaUserPlus, FaLocationDot, FaEnvelope } from "react-icons/fa6";
 import FormSubmit from "../FormSubmit/FormSubmit";
 
 export default function SessionContact() {
+  useEffect(() => {
+    // Load the HubSpot Meetings Embed script
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup when the component is unmounted
+      document.body.removeChild(script);
+    };
+  }, []);
   const [state, handleSubmit] = useForm("xgejkovp");
   const [isSending, setIsSending] = React.useState(false);
   const handleFormSubmit = async (event) => {
@@ -45,7 +58,7 @@ export default function SessionContact() {
               subTitle={"Sessions with Sri Ashish"}
             />
             <Row className="support" id="textspprt">
-              <Col md={6}>
+              <Col md={12}>
                 {/* <div className="Title_sub">
                   <h3 className="formhd">Sessions with Sri Ashish</h3>
                 </div> */}
@@ -54,23 +67,25 @@ export default function SessionContact() {
                     <strong> Sri Ashish</strong> is available online to answer all your queries. Your questions may be related to non-duality, understanding of the Three-Fold Path, your spiritual journey, the challenges, and obstacles you are facing on this path, or any clarification on the book's content. These forums are available to learn from him or seek his advice.
                   </p>
                   <ul className="list_itemBlock">
-
-                    <li>
+                  <li>
+                      You can book one on one session with Sri Ashish at the calendar given below
+                    </li>
+                    {/* <li>
                       Post your question or comments in the box on the side. The reply will be posted on various NDP social media platforms for everyone's benefit. Personal questions can be answered via email.
-                    </li>
+                    </li> */}
 
-                    <li>
+                    {/* <li>
                       Once a month, Sri Ashish will hold a one-hour interactive live session to discuss or answer any questions. You may register for these sessions here.
-                    </li>
+                    </li> */}
                   </ul>
                 </div>
-                <div className="button_Outer ">
+                {/* <div className="button_Outer ">
                   <Link to='/live-events' className="submit_btn">
                     Satsang Registration
                   </Link>
-                </div>
+                </div> */}
               </Col>
-              <Col md={6}>
+              <Col md={6} className="d-none">
                 <div className="backgrounfoprm Block_itemsMain">
                   <h2>Submit Query</h2>
                   <form onSubmit={handleSubmit} method="post" className="rightform_elements">
@@ -167,6 +182,9 @@ export default function SessionContact() {
                     </div>
                   </form>
                 </div>
+              </Col>
+              <Col md={12} className="mt-4">
+                  <div className="meetings-iframe-container" data-src="https://meetings.hubspot.com/ashish99?embed=true"></div>
               </Col>
             </Row>
           </Container>

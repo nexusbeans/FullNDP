@@ -1,0 +1,22 @@
+.imageCalslider{
+    .slider-items {
+        position: relative;
+
+        a {
+            width: 100%;
+        }
+    }
+
+    .slider-items {
+        position: relative;
+    }
+
+    .swiper-pagination {
+        display: none;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: #000;
+    }
+}
