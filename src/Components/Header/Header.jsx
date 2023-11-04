@@ -79,7 +79,7 @@ export default function Header() {
                             >
                               Recordings
                             </Link> */}
-                            <NavLink to="/blogpost" className="ancher">
+                            <NavLink to="/poems" className="ancher">
                               Poems By Sri Ashish{" "}
                             </NavLink>
                           </div>
@@ -92,9 +92,12 @@ export default function Header() {
                         </NavLink>
                       </li>
                       <li>
-                        <a href="https://ndpfoundation.medium.com/" className="header zoom" target="_blank" rel="noreferrer">
+                        {/* <a href="https://ndpfoundation.medium.com/" className="header zoom" target="_blank" rel="noreferrer">
                           Blog
-                        </a>
+                        </a> */}
+                           <NavLink to="/blog-post" className="ancher">
+                           Blog{" "}
+                            </NavLink>
                       </li>
                       <li>
                         <div className="dropdown">

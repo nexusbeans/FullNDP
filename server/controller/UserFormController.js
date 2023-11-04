@@ -1,8 +1,8 @@
-const UserInfo = require("../models/UserFormScehma");
+const BlogPostData = require("../models/UserFormScehma");
 
 module.exports.getUserData = async (req, res) => {
   try {
-    const UserDatas = await UserInfo.find();
+    const UserDatas = await BlogPostData.find();
     if (UserDatas.length === 0) {
       res.status(404).json({ msg: "No data found in the database." });
     } else {
@@ -16,13 +16,14 @@ module.exports.getUserData = async (req, res) => {
 
 module.exports.saveUserData = async (req, res) => {
   try {
-    const { fname, lname } = req.body;
-    const data = await UserInfo.create({
-      fname,
-      lname,
-      // email,
-      // password,
-      // userType,
+    const { BlogTitle, Blogdescription ,BlogDate,Blogername,Blogbuttonurl,Blogimage} = req.body;
+    const data = await BlogPostData.create({
+      BlogTitle,
+      Blogdescription,
+      BlogDate,
+      Blogername,
+      Blogbuttonurl,
+      Blogimage,
     });
     console.log("Saved Successfully...");
     res.status(201).json(data);
@@ -32,19 +33,6 @@ module.exports.saveUserData = async (req, res) => {
   }
 };
 
-// module.exports.saveUserData = (req, res) => {
-//   const { fname } = req.body;
-
-//   UserInfo.create({ fname })
-//     .then((data) => {
-//       console.log("Saved Successfully...");
-//       res.status(201).send(data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.send({ error: err, msg: "Something went wrong!" });
-//     });
-// };
 
 module.exports.updateUserData = async (req, res) => {
   const { fname, lname } = req.body;
@@ -55,7 +43,7 @@ module.exports.updateUserData = async (req, res) => {
 
   try {
     // Use findByIdAndUpdate to update a document by its ID
-    const updatedUserData = await UserInfo.findByIdAndUpdate(id, {
+    const updatedUserData = await BlogPostData.findByIdAndUpdate(id, {
       fname,
       lname,
     });
@@ -75,7 +63,7 @@ module.exports.deleteUserData = async (req, res) => {
   const userId = req.params.userId;
 
   try {
-    const deletedUser = await UserInfo.findByIdAndDelete(userId);
+    const deletedUser = await BlogPostData.findByIdAndDelete(userId);
 
     if (!deletedUser) {
       return res.status(404).json({ message: "User not found" });

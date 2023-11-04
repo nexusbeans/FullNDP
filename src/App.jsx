@@ -48,7 +48,7 @@ function App() {
         <Route path="/photos" element={<Photos />} />
         <Route path="/recording" element={<Recording />} />
         <Route path="/success" element={<FormSubmit />} />
-        <Route path="/blogpost" element={<BlogPost />} />
+        <Route path="/poems" element={<BlogPost />} />
 
 
         <Route path="/login-dashboard" element={isLoggedIn === "true" ? <Dashboard /> : <LoginArea />}/>

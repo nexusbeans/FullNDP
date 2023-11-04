@@ -6,18 +6,57 @@ import { baseURL } from "../../../utils/constant";
 import axios from "axios";
 
 const Dashboardslidebar = () => {
+  const [userData, setUserData] = useState(null);
   const [allDataArray, setAllData] = useState([]);
+
+
+
   const logOut = () => {
     window.localStorage.clear();
     window.location.href = "./login-dashboard";
   };
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const response = await fetch(`${baseURL}/userData`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            token: window.localStorage.getItem("token"),
+          }),
+        });
+        if (response.ok) {
+          const data = await response.json();
+          console.log(data, "userData by User target login");
+          setUserData(data.data);
+
+          if (data.data === "token expired") {
+            alert("Expired login Session");
+            window.localStorage.clear();
+            window.location.href = "./login-dashboard";
+          }
+        } else {
+          console.error("Failed to fetch user data");
+        }
+      } catch (error) {
+        console.error("An error occurred while fetching user data:", error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
 
 
   useEffect(() => {
     // Fetch user data when the component mounts
     async function fetchData() {
       try {
-        const response = await axios.get(`${baseURL}/getAllUser`);
+        const response = await axios.get(`${baseURL}/getUserData`);
         setAllData(response.data);
       } catch (error) {
         console.error("Error fetching user data:", error);
@@ -25,6 +64,7 @@ const Dashboardslidebar = () => {
     }
     fetchData();
   }, []);
+
   // console.log("arraty data",allDataArray)
   const [isMenuOpen, setMenuOpen] = useState([]);
 

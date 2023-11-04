@@ -2,22 +2,25 @@ import React, { useEffect, useState } from "react";
 import Dashboardslidebar from "../../ComponentDashboard/Dashboardslidebar/Dashboardslidebar";
 import DashboardFooter from "../../ComponentDashboard/DashboardFooter/DashboardFooter";
 import axios  from "axios";
+import "./Blogposter.scss"
+import { baseURL } from "../../../utils/constant";
 
 function Blogposter() {
 
-  const [data, setData] = useState([]);
+  const [allDataArray, setAllData] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/blogdatasend')
-      .then((response) => {
-        console.log(response.data);
-        setData(response.data); 
-      })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
+    // Fetch user data when the component mounts
+    async function fetchData() {
+      try {
+        const response = await axios.get(`${baseURL}/getUserData`);
+        setAllData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    }
+    fetchData();
   }, []);
-
 
 
   return (
@@ -30,7 +33,7 @@ function Blogposter() {
           <div className="theme-body">
             <div className="custom-container">
               <div className="row">
-                {data && data.map((post, index) => (
+                {allDataArray && allDataArray.map((post, index) => (
                   <div className="col-xl-4 col-sm-6 cdx-xl-50" key={index._id}>
                     <div className="card blog-wrapper">
                       <div className="imgwrapper">

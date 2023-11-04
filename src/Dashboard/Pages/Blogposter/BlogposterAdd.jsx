@@ -3,6 +3,7 @@ import Dashboardslidebar from "../../ComponentDashboard/Dashboardslidebar/Dashbo
 import DashboardFooter from "../../ComponentDashboard/DashboardFooter/DashboardFooter";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { baseURL } from "../../../utils/constant";
 
 function BlogposterAdd() {
   const [BlogTitle, BlogTitleset] = useState("");
@@ -16,27 +17,28 @@ function BlogposterAdd() {
 
   const handlesubmitblog = async (e) => {
     e.preventDefault();
-    const BlogdataGet = {
-      BlogTitle,
-      Blogdescription,
-      BlogDate,
-      Blogername,
-      Blogbuttonurl,
-      Blogimage,
-    };
-    console.log(BlogdataGet);
-
-    const res = await axios
-      .post("http://localhost:5000/blogpostdata", BlogdataGet)
-
-      .then((res) => {
-        alert("Saved successfully.");
-        navigate("/blogposter-add");
-      })
-      .catch((err) => {
-        console.log(err.message);
+    try {
+      const response = await axios.post(`${baseURL}/saveUserData`, {
+        BlogTitle,
+        Blogdescription,
+        BlogDate,
+        Blogername,
+        Blogbuttonurl,
+        Blogimage,
       });
+      console.log(response.data);
+  
+      // Display an alert for data save success
+      alert("Data saved successfully");
+  
+      // Redirect to the new location
+
+      navigate("/blogposter");
+    } catch (error) {
+      console.error("Error saving user data:", error);
+    }
   };
+  
 
   // function covertToBase64(e) {
   //   console.log(e);
