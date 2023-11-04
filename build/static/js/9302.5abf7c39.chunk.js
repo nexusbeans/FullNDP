@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[9302],{9302:function(s,e,c){s.exports=c.p+"static/media/poem-bg.9e3735890c92dd4513c7.jpg"}}]);
