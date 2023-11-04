@@ -17,7 +17,6 @@ import EventLive from "./Pages/EventLive/EventLive";
 import Recording from "./Pages/Recording/Recording";
 import FormSubmit from "./Pages/FormSubmit/FormSubmit";
 import BlogPost from "./Pages/BlogPost/BlogPost";
-import Login from "./Dashboard/Pages/Login/Login";
 import SignUp from "./Dashboard/Pages/SignUp/SignUp";
 import LoginArea from "./Dashboard/Pages/Login/LoginArea";
 import Dashboard from "./Dashboard/Pages/Dashboard/Dashboard";
@@ -26,6 +25,7 @@ import BlogposterAdd from "./Dashboard/Pages/Blogposter/BlogposterAdd";
 import DashboardMain from "./Dashboard/Pages/DashboardMain/DashboardMain";
 import DashboardBanner from "./Dashboard/Pages/DashboardBanner/DashboardBanner";
 import Addbanner from "./Dashboard/Pages/DashboardBanner/Addbanner";
+import UserTarget from "./Dashboard/ComponentDashboard/UserTarget/UserTarget";
 
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
 
 
         <Route path="/login-dashboard" element={isLoggedIn === "true" ? <Dashboard /> : <LoginArea />}/>
+        <Route path="/user-dashboard" element={isLoggedIn === "true" ? <UserTarget /> : <LoginArea />}/>
         <Route path="/signup-dashboard" element={isLoggedIn === "true" ? <Dashboard /> : <SignUp />} />
         <Route path="/dashboard" element={isLoggedIn === "true" ? <Dashboard /> : <LoginArea />} />
         <Route path="/blogposter" element={isLoggedIn === "true" ? <Blogposter /> : <LoginArea />} />

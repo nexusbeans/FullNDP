@@ -28,7 +28,7 @@ export const ContactAll = () => {
                                 errors={state.errors}
                             />
 
-                            <div className="icon_fields"><FaUserPlus /></div>
+                            <div className="icon_fields"></div>
 
                         </div>
                     </div>

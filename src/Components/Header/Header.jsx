@@ -93,7 +93,7 @@ export default function Header() {
                       </li>
                       <li>
                         <a href="https://ndpfoundation.medium.com/" className="header zoom" target="_blank" rel="noreferrer">
-                          Blogs
+                          Blog
                         </a>
                       </li>
                       <li>
@@ -138,7 +138,7 @@ export default function Header() {
                             EVENTS
                           </NavLink>
                           <div className="dropdown-content">
-                            <Link to="/live-events">Live</Link>
+                            <Link to="/live-events">Upcoming Events</Link>
                             {/* <Link
                               to="/recording"
                               className="ancher"

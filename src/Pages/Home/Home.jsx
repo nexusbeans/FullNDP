@@ -219,7 +219,7 @@ export default function Home() {
           </Container>
         </section>
 
-        {/* <section className="section_msgDrop reviewpadd">
+         {/* <section className="section_msgDrop reviewpadd">
           <Container>
             <TitleWraper
               MainTitle={"Contact with Us"}
@@ -339,7 +339,7 @@ export default function Home() {
               </Col>
             </div>
           </Container>
-        </section> */}
+        </section>  */}
       </main>
       <Footer />
     </>

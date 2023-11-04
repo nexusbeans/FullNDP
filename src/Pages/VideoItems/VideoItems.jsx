@@ -7,6 +7,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import Iframe from "react-iframe";
 import TitleWraper from "../../Components/TitleWraper";
 import axios from "axios";
+import YouTubePlaylist from "@codesweetly/react-youtube-playlist";
 
 export default function VideoItems() {
   const [videoUrls, youtubeData] = useState([]);
@@ -101,7 +102,7 @@ export default function VideoItems() {
                         id="registration-form-wrapper "
                         className="bottomframe Video_BlockItems"
                       >
-                        {videoUrls.map((url, index) => (
+                        {/* {videoUrls.map((url, index) => (
                           <div key={index} className="Video_blockElements">
                             <Iframe
                               src={url}
@@ -111,7 +112,12 @@ export default function VideoItems() {
                               allowFullScreen=""
                             />
                           </div>
-                        ))}
+                        ))} */}
+                        <YouTubePlaylist
+                          apiKey="AIzaSyBtGPHVKuztk8298ZbA0rb5ZHjZd4BE1F8"
+                          playlistId="PL-nQOdm3xoxjeyS1q2BVDowznv9BN4v2z"
+                          uniqueName="Videos"
+                        />
                       </div>
                     </div>
                   )}
@@ -121,7 +127,7 @@ export default function VideoItems() {
                         id="registration-form-wrapper "
                         className="bottomframe Video_BlockItems"
                       >
-                        {videoRecording.map((url, index) => (
+                        {/* {videoRecording.map((url, index) => (
                           <div key={index} className="Video_blockElements">
                             <Iframe
                               src={url}
@@ -131,7 +137,12 @@ export default function VideoItems() {
                               allowFullScreen=""
                             />
                           </div>
-                        ))}
+                        ))} */}
+                        <YouTubePlaylist
+                          apiKey="AIzaSyBtGPHVKuztk8298ZbA0rb5ZHjZd4BE1F8"
+                          playlistId="PL-nQOdm3xoxggWZWGor1Rig9QJVOz19FK"
+                          uniqueName="Videos_recording"
+                        />
                       </div>
                     </div>
                   )}

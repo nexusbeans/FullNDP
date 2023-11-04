@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { baseURL } from "../../../utils/constant";
+import { v4 as uuid } from "uuid";
+
 
 function FormInput({ label, type, name, value, onChange, required }) {
+
+
   return (
     <div className="form-element form-stack">
       <label htmlFor={name} className="form-label">
@@ -20,6 +25,10 @@ function FormInput({ label, type, name, value, onChange, required }) {
 }
 
 export default function SignUp() {
+  
+
+  const unique_id = uuid();
+  const small_id = unique_id.slice(0, 8);
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
@@ -27,40 +36,50 @@ export default function SignUp() {
   const [userType, setUserType] = useState("");
   const [secretKey, setSecretKey] = useState("");
 
+  const ADMIN_USER_TYPE = process.env.ADMIN_USER_TYPE;
+  const SECRET_KEY = process.env.SECRET_KEY;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (secretKey !== "nexusbeansControl") {
-      alert("You Entered the Wrong Key");
-    } else {
-      try {
-        const response = await fetch("http://localhost:5000/register", {
-          method: "POST",
-          crossDomain: true,
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-          body: JSON.stringify({
-            fname,
-            email,
-            lname,
-            password,
-            userType: "Admin", 
-          }),
+
+    if (userType === ADMIN_USER_TYPE && secretKey !== SECRET_KEY) {
+      alert("Invalid Administration key ");
+      return;
+    }
+
+    console.log(fname, lname, email, password);
+    try {
+      const response = await fetch(`${baseURL}/register`, {
+        method: "POST",
+        crossDomain: true,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+        body: JSON.stringify({
+          fname,
+          email,
+          lname,
+          password,
+          small_id,
+          userType: "Admin", 
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data, "userRegister");
+          if (data.status === "ok") {
+            alert("Registration Successful");
+          } else {
+            alert("User already found");
+          }
         });
-        const data = await response.json();
-        if (data.status === "ok") {
-          alert("Registration Successful");
-        } else {
-          alert("User Already Registered");
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        alert("An error occurred during registration.");
-      }
+    } catch (error) {
+      console.error("Error:", error);
     }
   };
+
 
   const goLogin = () => {
     window.open("/login-dashboard");

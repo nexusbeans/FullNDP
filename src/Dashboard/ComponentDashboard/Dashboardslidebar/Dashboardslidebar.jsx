@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DynamicImage from "../../../Components/DynamicImage";
 import { FaFile, FaGauge, FaImage } from "react-icons/fa6";
+import { baseURL } from "../../../utils/constant";
+import axios from "axios";
 
 const Dashboardslidebar = () => {
+  const [allDataArray, setAllData] = useState([]);
   const logOut = () => {
     window.localStorage.clear();
     window.location.href = "./login-dashboard";
   };
 
+
+  useEffect(() => {
+    // Fetch user data when the component mounts
+    async function fetchData() {
+      try {
+        const response = await axios.get(`${baseURL}/getAllUser`);
+        setAllData(response.data);
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    }
+    fetchData();
+  }, []);
+  // console.log("arraty data",allDataArray)
   const [isMenuOpen, setMenuOpen] = useState([]);
 
   const handleMenuClick = (index) => {
@@ -20,11 +37,13 @@ const Dashboardslidebar = () => {
 
   return (
     <div id="dashboarcontrol">
+       <h1 className="test">{allDataArray.fname}</h1>
       <header className="codex-header">
         <div className="header-contian d-flex justify-content-between align-items-center">
           <div className="header-left d-flex align-items-center">
             <div className="sidebar-action navicon-wrap">
               <i data-feather="menu" />
+             
             </div>
             <div className="search-bar">
               <div className="form-group mb-0">

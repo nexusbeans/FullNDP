@@ -52,8 +52,8 @@ function EventLive() {
         <section className='section_eventsLive section_msgDrop mt-3'>
           <Container>
             <TitleWraper
-              MainTitle={"Live Event"}
-              subTitle={"Live Event"}
+              MainTitle={"Upcomings Event"}
+              subTitle={"Upcomings Event"}
             />
                   {/* <SliderBlock /> */}
             <Row className='event_listRow'>
@@ -65,9 +65,10 @@ function EventLive() {
                 </div>
               </Col> */}
               <Col md={12} className="rightform">
-              <a href="http://42801678.hs-sites.com/meet-greet_chicago_oct-28-2023" target='_blank' rel="noreferrer" className='w-100'>
+              {/* <a href="https://42801678.hs-sites.com/meet-greet_chicago_oct-28-2023?utm_campaign=In%20Person%20Session-Chicago%20-%20Oct%2028%202023&utm_medium=email&_hsmi=2&_hsenc=p2ANqtz-_iOKdxpXJMsXmueGbi_SKy2x_fLQzu5HFS-w9SlqRQK7hmNupywsxwyb59n9Mgm19X0P8QqBV_2WDwPipitoIu7UEY8xzwpM2u13TmrI-1Tn9IAWA&utm_content=2&utm_source=hs_email" target='_blank' rel="noreferrer" className='w-100'>
               <img src={Banner7} alt="" srcset=""  className='w-100'/>
-              </a>
+              </a> */}
+              <p className='text-center'>No Events</p>
                 {/* <form onSubmit={handleSubmit} method="post" className="rightform_elements">
                 <input type="hidden" value="Live Event Form" name="Form_Name" id="SESSION_PAGE_FORM" />
                   <div id="blocks" className="form-group">
