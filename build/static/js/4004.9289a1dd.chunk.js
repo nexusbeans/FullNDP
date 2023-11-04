@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[4004],{4004:function(s,e,a){s.exports=a.p+"static/media/book.22e13afc5260dbdc2495.png"}}]);

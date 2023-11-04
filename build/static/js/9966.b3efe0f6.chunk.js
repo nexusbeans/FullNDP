@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[9966],{9966:function(s,e,h){s.exports=h.p+"static/media/buy-now-logo.03917f1eb4c372347f75.png"}}]);
