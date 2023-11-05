@@ -44,8 +44,8 @@ const initializeApp = async () => {
   await connectToMongoDB();
   startServer();
 };
-app.get("/", (req, res) => {
-  res.send("status online");
+app.get("/api", (req, res) => {
+  res.send("server status online");
 });
 // Start the application
 initializeApp();
