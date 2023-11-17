@@ -7,6 +7,7 @@ import "./HomeSlider.scss";
 import { Link } from "react-router-dom";
 // import sliderImageData from "../../Api/sliderImageData.json";
 // import sliderImageData from "../../Api/HomesliderData";
+import { baseURL } from "../../utils/constant";
 import axios from "axios";
 
 
@@ -23,6 +24,9 @@ export default function HomeSlider() {
         console.error("Error fetching slider data:", error);
       });
   }, []);
+
+  
+
 
   
   return (

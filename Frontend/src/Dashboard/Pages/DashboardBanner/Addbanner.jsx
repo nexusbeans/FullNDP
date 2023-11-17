@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Dashboardslidebar from "../../ComponentDashboard/Dashboardslidebar/Dashboardslidebar";
 import DashboardFooter from "../../ComponentDashboard/DashboardFooter/DashboardFooter";
+import { baseURL } from "../../../utils/constant";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 
 function Addbanner() {
   const [image, setImage] = useState("");
-  const [allImage, setAllImage] = useState([]);
+  const [bannerSaveData, setAllImage] = useState([]);
+  const navigate = useNavigate();
 
   function covertToBase64(e) {
     console.log(e);
@@ -22,22 +26,23 @@ function Addbanner() {
     getImage();
   }, []);
 
-  function uploadImage() {
-    fetch("http://localhost:5000/upload-image", {
-      method: "POST",
-      crossDomain: true,
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        "Access-Control-Allow-Origin": "*",
-      },
-      body: JSON.stringify({
-        base64: image,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  }
+  const uploadImage = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${baseURL}/bannersave`, {
+        bannerSaveData,
+      });
+      console.log(response.data);
+  
+      alert("Data saved successfully");
+
+
+      navigate("/blogposter");
+    } catch (error) {
+      console.error("Error saving user data:", error);
+    }
+  };
+  
   function getImage() {
     fetch("http://localhost:5000/get-image", {
       method: "GET",
@@ -63,10 +68,10 @@ function Addbanner() {
                     </a>
                   </li>
                   <li className="breadcrumb-item">
-                    <a href="javascript:void(0);">form</a>
+                    <Link to="#">form</Link>
                   </li>
                   <li className="breadcrumb-item active">
-                    <a href="javascript:void(0);">Input Element</a>
+                    <Link to="#">Input Element</Link>
                   </li>
                 </ul>
               </div>
@@ -126,7 +131,7 @@ function Addbanner() {
                               ) : (
                                 <img width={100} height={100} src={image} />
                               )}
-                              {allImage.map((data) => {
+                              {bannerSaveData.map((data) => {
                                 return (
                                   <img
                                     width={100}

@@ -12,7 +12,7 @@ import FormSubmit from '../FormSubmit/FormSubmit';
 import SliderBlock from '../../Components/SliderBlock';
 import Banner5 from "../../assets/images/NDP_Banner1.jpg";
 import Banner6 from "../../assets/images/p1.jpg";
-import Banner7 from "../../assets/images/p3.jpg";
+import Banner7 from "../../assets/images/p6.jpg";
 // import selectOptions from "../../Api/LiveEventOption";
 import axios from 'axios';
 
@@ -65,10 +65,10 @@ function EventLive() {
                 </div>
               </Col> */}
               <Col md={12} className="rightform">
-              {/* <a href="https://42801678.hs-sites.com/meet-greet_chicago_oct-28-2023?utm_campaign=In%20Person%20Session-Chicago%20-%20Oct%2028%202023&utm_medium=email&_hsmi=2&_hsenc=p2ANqtz-_iOKdxpXJMsXmueGbi_SKy2x_fLQzu5HFS-w9SlqRQK7hmNupywsxwyb59n9Mgm19X0P8QqBV_2WDwPipitoIu7UEY8xzwpM2u13TmrI-1Tn9IAWA&utm_content=2&utm_source=hs_email" target='_blank' rel="noreferrer" className='w-100'>
+              <a href="#" target='_blank' rel="noreferrer" className='w-100'>
               <img src={Banner7} alt="" srcset=""  className='w-100'/>
-              </a> */}
-              <p className='text-center'>No Events</p>
+              </a>
+              {/* <p className='text-center'>No Events</p> */}
                 {/* <form onSubmit={handleSubmit} method="post" className="rightform_elements">
                 <input type="hidden" value="Live Event Form" name="Form_Name" id="SESSION_PAGE_FORM" />
                   <div id="blocks" className="form-group">

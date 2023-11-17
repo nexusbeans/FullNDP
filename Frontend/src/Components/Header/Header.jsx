@@ -3,7 +3,6 @@ import { Col, Container, Row } from "react-bootstrap";
 import "./Header.scss";
 import logoheader from "../../assets/images/logo.png";
 import DonateImg from "../../assets/images/Donatebtn.png";
-
 import ButtonLogo from "../../assets/images/button.png";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
@@ -43,18 +42,20 @@ export default function Header() {
     <header
       className={isSticky ? "sticky header_Elements  " : "header_Elements "}
     >
-{isLoggedIn === "true"? 
-    <Link className="button_adminDB" to="/dashboard">Admin Dashboard</Link> : null
+      {isLoggedIn === "true" ? (
+        <Link className="button_adminDB" to="/dashboard">
+          Admin Dashboard
+        </Link>
+      ) : null}
 
-}
-     
       <div className="greyback grad">
         <Container>
           <Row>
             <Col>
               <div
-                className={` NavItem_elements right_toggle_menu ${menuReleased ? "right_toggle_menu_release" : ""
-                  }`}
+                className={` NavItem_elements right_toggle_menu ${
+                  menuReleased ? "right_toggle_menu_release" : ""
+                }`}
               >
                 <div className="logo_items">
                   <Link to="/">
@@ -73,8 +74,15 @@ export default function Header() {
                       </li> */}
                       <li>
                         <div className="dropdown">
-                          <NavLink className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? " header zoom" : "header zoom"}>
+                          <NavLink
+                            className={({ isActive, isPending }) =>
+                              isPending
+                                ? "pending"
+                                : isActive
+                                ? " header zoom"
+                                : "header zoom"
+                            }
+                          >
                             SRI ASHISH
                           </NavLink>
                           <div className="dropdown-content">
@@ -92,29 +100,45 @@ export default function Header() {
                         </div>
                       </li>
                       <li>
-                        <NavLink to="/three-page" className={({ isActive, isPending }) =>
-                          isPending ? "pending" : isActive ? "active header zoom" : "header zoom"}>
+                        <NavLink
+                          to="/three-page"
+                          className={({ isActive, isPending }) =>
+                            isPending
+                              ? "pending"
+                              : isActive
+                              ? "active header zoom"
+                              : "header zoom"
+                          }
+                        >
                           THREE-FOLD PATH
                         </NavLink>
                       </li>
                       <li>
-                        {/* <a href="https://ndpfoundation.medium.com/" className="header zoom" target="_blank" rel="noreferrer">
+                        <a href="https://ndpfoundation.medium.com/" className="header zoom" target="_blank" rel="noreferrer">
                           Blog
-                        </a> */}
-                        <NavLink to="/blog-post" className="ancher">
+                        </a>
+                        {/* <NavLink to="/blog-post" className="ancher">
                           Blog{" "}
-                        </NavLink>
+                        </NavLink> */}
                       </li>
                       <li>
                         <div className="dropdown">
-                          <NavLink to="/i-am-book" className="header zoom">“I AM” – Book </NavLink>
+                          <NavLink to="/i-am-book" className="header zoom">
+                            “I AM” – Book{" "}
+                          </NavLink>
                           <div className="dropdown-content">
-                            <Link offset='80' target="_parent" to="#whatisinbook" className="ancher Value_targetHidden">
+                            <Link
+                              offset="80"
+                              target="_parent"
+                              to="#whatisinbook"
+                              className="ancher Value_targetHidden"
+                            >
                               WHAT'S IN THE BOOK
                             </Link>
                             <Link
                               href="#whatisinbook"
-                              className="ancher Value_targetHidden" offset='80'
+                              className="ancher Value_targetHidden"
+                              offset="80"
                             >
                               Why should you read this book?
                             </Link>
@@ -142,8 +166,15 @@ export default function Header() {
 
                       <li>
                         <div className="dropdown">
-                          <NavLink className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? " header zoom" : "header zoom"}>
+                          <NavLink
+                            className={({ isActive, isPending }) =>
+                              isPending
+                                ? "pending"
+                                : isActive
+                                ? " header zoom"
+                                : "header zoom"
+                            }
+                          >
                             EVENTS
                           </NavLink>
                           <div className="dropdown-content">
@@ -162,8 +193,18 @@ export default function Header() {
                       </li>
                       <li>
                         <div className="dropdown">
-                          <NavLink to="/video-items" className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "active header zoom" : "header zoom"}>GALLERY</NavLink>
+                          <NavLink
+                            to="/video-items"
+                            className={({ isActive, isPending }) =>
+                              isPending
+                                ? "pending"
+                                : isActive
+                                ? "active header zoom"
+                                : "header zoom"
+                            }
+                          >
+                            GALLERY
+                          </NavLink>
                           {/* <div className="dropdown-content">
                             <Link to="/video-items">Photo & Videos</Link>
                              <Link
@@ -176,8 +217,16 @@ export default function Header() {
                         </div>
                       </li>
                       <li>
-                        <NavLink to="/contact-us" className={({ isActive, isPending }) =>
-                          isPending ? "pending" : isActive ? "active header zoom" : "header zoom"}>
+                        <NavLink
+                          to="/contact-us"
+                          className={({ isActive, isPending }) =>
+                            isPending
+                              ? "pending"
+                              : isActive
+                              ? "active header zoom"
+                              : "header zoom"
+                          }
+                        >
                           Contact Us
                         </NavLink>
                       </li>
@@ -201,7 +250,10 @@ export default function Header() {
                         </Link>
                       </div>
                       <div className="NavBlockIcon donateIcon">
-                        <Link to="https://www.zeffy.com/en-US/donation-form/531ca771-879c-4969-90ac-e6dc287f0e61" target="_blank">
+                        <Link
+                          to="https://www.zeffy.com/en-US/donation-form/531ca771-879c-4969-90ac-e6dc287f0e61"
+                          target="_blank"
+                        >
                           <img
                             src={DonateImg}
                             className="headerlogo"
@@ -220,7 +272,10 @@ export default function Header() {
                     </Link>
                   </div>
                   <div className="NavBlockIcon donateIcon">
-                    <Link to="https://www.zeffy.com/en-US/donation-form/531ca771-879c-4969-90ac-e6dc287f0e61" target="_blank">
+                    <Link
+                      to="https://www.zeffy.com/en-US/donation-form/531ca771-879c-4969-90ac-e6dc287f0e61"
+                      target="_blank"
+                    >
                       <img src={DonateImg} className="headerlogo" alt="img" />
                     </Link>
                   </div>

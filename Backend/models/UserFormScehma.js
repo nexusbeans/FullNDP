@@ -8,6 +8,7 @@ const UserDetailsSchema = new mongoose.Schema(
     Blogername: String,
     Blogbuttonurl: String,
     Blogimage: String,
+    bannerSaveData: String,
   },
   {
     collection: "BlogPostData",

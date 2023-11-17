@@ -25,6 +25,23 @@ module.exports.saveUserData = async (req, res) => {
       Blogbuttonurl,
       Blogimage,
     });
+    // console.log("Saved Successfully...");
+    res.status(201).json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: err, msg: "Something went wrong!" });
+  }
+};
+
+
+module.exports.bannersave = async (req, res) => {
+  try {
+    const { bannerSaveData } = req.body;
+    const data = await BlogPostData.create({
+      bannerSaveData,
+     
+    });
+    console.log(bannerSaveData,"data getimage")
     console.log("Saved Successfully...");
     res.status(201).json(data);
   } catch (err) {
@@ -32,6 +49,7 @@ module.exports.saveUserData = async (req, res) => {
     res.status(500).json({ error: err, msg: "Something went wrong!" });
   }
 };
+
 
 
 module.exports.updateUserData = async (req, res) => {
