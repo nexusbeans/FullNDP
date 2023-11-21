@@ -196,7 +196,7 @@ export default function IamBook() {
                   yogis brings joy to his heart. Inspired by Sri Ashish, this book
                   was written as an expression of that joy. Anil believes that
                   the spiritual mysticism has a perfect repeatable method which
-                  remains to be explained by science.fdg
+                  remains to be explained by science.
                 </p>
               </Col>
             </Row>
