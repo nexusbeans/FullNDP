@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[5590],{5590:function(s,e,a){s.exports=a.p+"static/media/12.0455fb355210d4ef5ae6.jpg"}}]);
