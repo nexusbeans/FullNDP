@@ -24,10 +24,6 @@ export default function HomeSlider() {
         console.error("Error fetching slider data:", error);
       });
   }, []);
-
-  
-
-
   
   return (
     <>

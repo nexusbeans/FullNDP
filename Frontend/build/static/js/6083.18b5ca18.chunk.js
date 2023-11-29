@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkashish=self.webpackChunkashish||[]).push([[6083],{6083:function(s,e,a){s.exports=a.p+"static/media/touch2.54b27e4f48de5aa431e7.png"}}]);
