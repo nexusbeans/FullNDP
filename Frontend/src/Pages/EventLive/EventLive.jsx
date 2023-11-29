@@ -6,12 +6,12 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import TitleWraper from '../../Components/TitleWraper';
 import { FaUserPlus, FaLocationDot, FaEnvelope, FaComments } from "react-icons/fa6";
 import EventCalender from '../../Components/EventCalender';
-import { useForm, ValidationError } from '@formspree/react';
 import { GoogleCaptcha } from "../../Components/GoogleCaptcha/GoogleCaptcha";
-import FormSubmit from '../FormSubmit/FormSubmit';
 import SliderBlock from '../../Components/SliderBlock';
 import Banner5 from "../../assets/images/NDP_Banner1.jpg";
 import Banner6 from "../../assets/images/p1.jpg";
+import { useForm, ValidationError } from '@formspree/react';
+import FormSubmit from '../FormSubmit/FormSubmit';
 import Banner7 from "../../assets/images/p6.jpg";
 // import selectOptions from "../../Api/LiveEventOption";
 import axios from 'axios';
@@ -32,11 +32,11 @@ function EventLive() {
 
   const [state, handleSubmit] = useForm("xgejkovp");
   if (state.succeeded) {
-    return <><FormSubmit/></>;
+    return <><FormSubmit /></>;
   }
   const eventOnclick = () => {
     window.open('https://tc.touchcast.com/showtime/ndp/login', '_blank');
-};
+  };
 
 
 
@@ -44,7 +44,7 @@ function EventLive() {
     <>
       <Header />
       <main className='eventLive_main default_layout mt-0'>
-      {/* <section className='banner_itemsevents'>
+        {/* <section className='banner_itemsevents'>
         <Container fluid>
           <img src={Banner5} alt='bannerimage' className='img-fluid set_pointer' onClick={eventOnclick}/>
         </Container>
@@ -55,7 +55,7 @@ function EventLive() {
               MainTitle={"Upcomings Event"}
               subTitle={"Upcomings Event"}
             />
-                  {/* <SliderBlock /> */}
+            {/* <SliderBlock /> */}
             <Row className='event_listRow'>
               {/* <Col md={6}>
                 <div className='live_eventPage'>
@@ -65,10 +65,10 @@ function EventLive() {
                 </div>
               </Col> */}
               <Col md={12} className="rightform">
-              <a href="#" target='_blank' rel="noreferrer" className='w-100'>
-              <img src={Banner7} alt="" srcset=""  className='w-100'/>
-              </a>
-              {/* <p className='text-center'>No Events</p> */}
+                <a href="#" target='_blank' rel="noreferrer" className='w-100'>
+                  <img src={Banner7} alt="" srcset="" className='w-100' />
+                </a>
+                {/* <p className='text-center'>No Events</p> */}
                 {/* <form onSubmit={handleSubmit} method="post" className="rightform_elements">
                 <input type="hidden" value="Live Event Form" name="Form_Name" id="SESSION_PAGE_FORM" />
                   <div id="blocks" className="form-group">
